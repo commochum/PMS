@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A93566A-595F-4DB7-B525-5ADCE422528D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PractiseManagementSystem</RootNamespace>
+    <AssemblyName>PractiseManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AppointmentProcessingForm.xaml.cs">
+      <DependentUpon>AppointmentProcessingForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Domain_Classes\MedicalRecords.cs" />
+    <Compile Include="EmployeeProcessingForm.xaml.cs">
+      <DependentUpon>EmployeeProcessingForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalRecordsProcessingForm.xaml.cs">
+      <DependentUpon>MedicalRecordsProcessingForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PatientProcessingForm.xaml.cs">
+      <DependentUpon>PatientProcessingForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionFactory.cs" />
+    <Compile Include="Domain_Classes\Appointment.cs" />
+    <Compile Include="Domain_Classes\Doctor.cs" />
+    <Compile Include="Domain_Classes\Employee.cs" />
+    <Compile Include="Interfaces\IContact.cs" />
+    <Compile Include="Domain_Classes\Person.cs" />
+    <Compile Include="ViewAppointmentDetailsForm.xaml.cs">
+      <DependentUpon>ViewAppointmentDetailsForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPatientMedicalRecords.xaml.cs">
+      <DependentUpon>ViewPatientMedicalRecords.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AppointmentProcessingForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmployeeProcessingForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MedicalRecordsProcessingForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PatientProcessingForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainContentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Domain_Classes\Login.cs" />
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainContentPage.xaml.cs">
+      <DependentUpon>MainContentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ViewAppointmentDetailsForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPatientMedicalRecords.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain_Classes\Patient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bgSelectedDoctor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\apptAdd.png" />
+    <Resource Include="Images\apptDelete.png" />
+    <Resource Include="Images\apptUpdate.png" />
+    <Resource Include="Images\apptView.png" />
+    <Resource Include="Images\bgMainContent.jpg" />
+    <Resource Include="Images\bgSelectedAdmin.jpg" />
+    <Resource Include="Images\bgSelectedAppointment.jpg" />
+    <Resource Include="Images\bgSelectedNurse.jpg" />
+    <Resource Include="Images\bgSelectedReceptionist.jpg" />
+    <Resource Include="Images\btnAdd.png" />
+    <Resource Include="Images\btnCancel.png" />
+    <Resource Include="Images\btnDelete.png" />
+    <Resource Include="Images\btnReset.png" />
+    <Resource Include="Images\btnSave.png" />
+    <Resource Include="Images\btnUpdate.png" />
+    <Resource Include="Images\employeeAdd.png" />
+    <Resource Include="Images\employeeDelete.png" />
+    <Resource Include="Images\exitApplication.png" />
+    <Resource Include="Images\line4.png" />
+    <Resource Include="Images\loginImageBtn.png" />
+    <Resource Include="Images\loginSideLeft.jpg" />
+    <Resource Include="Images\mainfooter.jpg" />
+    <Resource Include="Images\mainheader.JPG" />
+    <Resource Include="Images\mainLogo.png" />
+    <Resource Include="Images\mainsideleft.jpg" />
+    <Resource Include="Images\mainsideright.jpg" />
+    <Resource Include="Images\patientAdd.png" />
+    <Resource Include="Images\patientDelete.png" />
+    <Resource Include="Images\patientSearch.png" />
+    <Resource Include="Images\ProjectHeader.PNG" />
+    <Resource Include="Images\ProjectHeader1.png" />
+    <Resource Include="Images\separatorLeft.png" />
+    <Resource Include="Images\separatorRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bgLoginPage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bgPatientPage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\patientView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\imgBackBtn.jpg" />
+    <Resource Include="Images\imgHomeBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\doctorAdd.png" />
+    <Resource Include="Images\doctorDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bgMedicalRecords.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\medicalRecordAdd.png" />
+    <Resource Include="Images\medicalRecordDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\yourMedicalRecords.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\medicalRecordView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bgMedicalRecordsView.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\search.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

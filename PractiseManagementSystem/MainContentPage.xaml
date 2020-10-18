@@ -1,0 +1,295 @@
+﻿<Window x:Class="PractiseManagementSystem.MainContentPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PractiseManagementSystem"
+        mc:Ignorable="d"  WindowStyle="None"  WindowStartupLocation="CenterScreen"
+        Title="Practise Management System by Karen Atas" Height="827" Width="1250.47">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush x:Name="bgMainPage"  ImageSource="/Images/bgMainContent.jpg" Opacity="0.3" Stretch="UniformToFill">
+            </ImageBrush>
+        </Grid.Background>
+        <DockPanel x:Name="dockpnlMenu" Margin="0,0,0,0.2">
+            <Grid Width="auto" Height="150" DockPanel.Dock="Top">
+                <Image Source="/Images/mainLogo.png" Opacity="0.8" VerticalAlignment="Center" HorizontalAlignment="Left" Height="115" Margin="0,0,0,0" Width="100"></Image>
+                <!-- <Label Content="Welcome to Practise Management System" VerticalContentAlignment="Center" FontFamily="Trebuchet MS" Foreground="#0f5462" FontSize="28" FontWeight="Bold" Margin="95,0,0,0"></Label>
+              -->
+                <Image Source="/Images/ProjectHeader.png" Opacity="0.8"  VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Width="600" Margin="100,0,0,0"></Image>
+                <Image x:Name="exitApplication" Source="/Images/exitApplication.png" ToolTip="Exit Application" VerticalAlignment="Top" HorizontalAlignment="Right" Width="40" Margin="0,10,10,0" MouseDown="exitApplication_onMouseDown"></Image>
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Images/mainheader.jpg" Stretch="UniformToFill"/>
+                </Grid.Background>
+            </Grid>
+
+            <Grid  DockPanel.Dock="Left" Width="50" HorizontalAlignment="Left">
+                <Grid.Background>
+                    <ImageBrush  x:Name="image4" ImageSource="/Images/mainsideleft.jpg"  Stretch="UniformToFill" Opacity="0.2"/>
+                </Grid.Background>
+
+            </Grid>
+            <Grid  DockPanel.Dock="Right" Width="50">
+                <Grid.Background>
+                    <ImageBrush  x:Name="image3" ImageSource="/Images/mainsideright.jpg"  Stretch="UniformToFill" Opacity="0.2"/>
+                </Grid.Background>
+
+            </Grid>
+
+            <Grid DockPanel.Dock="Bottom" Height="70" VerticalAlignment="Bottom">
+                <Grid.Background>
+                    <ImageBrush  x:Name="image2" ImageSource="/Images/mainfooter.jpg"  Stretch="UniformToFill" Opacity="0.2"/>
+                </Grid.Background>
+            </Grid>
+        </DockPanel>
+
+        <Grid  Margin="50,50,50,9.6" >
+            <!--  <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>-->
+            <TabControl x:Name="MedicalPanel" TabStripPlacement="Left" HorizontalAlignment="Left" Height="576" Margin="33,113,0,0" VerticalAlignment="Top" Width="972"  Background="Transparent" BorderBrush="DarkGray">
+
+                <TabControl.Resources>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TabItem">
+                                    <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="4,4,0,0" Margin="2,0">
+                                        <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="Border" Property="Background" Value="#ccebff" />
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="False">
+                                            <Setter TargetName="Border" Property="Background" Value="Transparent" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabControl.Resources>
+
+                <TabItem x:Name="Appointment" Header="Appointment" Foreground="DarkSlateGray" FontWeight="Bold" FontSize="13" Selector.Selected ="Appointment_Selected">
+                    <Grid x:Name="grdAppointment" Background="Transparent" HorizontalAlignment="Center" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <TextBlock x:Name="tbAppointmentMainMessage"  HorizontalAlignment="Left" Width="auto" Height="auto" FontSize="12" Grid.ColumnSpan="10" Grid.Row="0"  Margin="0,30,0,-38"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1" Height="auto" HorizontalAlignment="Right">
+                            <Image x:Name="imgAddAppointment" Source="/Images/apptAdd.png" ToolTip="Add Appointment" Width="70" Height="60" MouseDown="btnAddAppointment_Click" HorizontalAlignment="Right" Opacity="0.5" MouseEnter="addAppointmentIcon_onMouseEnter" MouseLeave="addAppointmentIcon_onMouseLeave" Margin="0,0,100,-20"/>
+                            <Image x:Name="imgViewAppointment" Source="/Images/apptView.png" ToolTip="View Appointment" Width="70" Height="60" MouseDown="btnViewAppointment_Click" HorizontalAlignment="Right" Opacity="0.5" MouseEnter="viewAppointmentIcon_onMouseEnter" MouseLeave="viewAppointmentIcon_onMouseLeave" Margin="0,0,0,-20"/>
+                        </Grid>
+                        <Grid Grid.Row="2" HorizontalAlignment="Center" Height="auto">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="lblAppointmentList" Background="Transparent" Foreground="#4d4d4d" HorizontalContentAlignment="Left" />
+
+                            <!--<WrapPanel Grid.Row="1" VerticalAlignment="Center" Margin="0,-10,0,0">
+                                <Label x:Name="lblSearchAppointment"  Content="Search Patient " VerticalAlignment="Center"></Label>
+                                <TextBox x:Name="txtSearchAppointment" Width="100" KeyUp="searchPatient_KeyUp" Height="25"></TextBox>
+                                <Image x:Name="imgSearchAppointment" Grid.Row="1"  Source="/Images/patientSearch.png" ToolTip="Search Patient" Width="70" Height="50" MouseDown="btnSearchPatientAppt_Click" HorizontalAlignment="Left" />
+                            </WrapPanel>-->
+
+                            <DataGrid x:Name="grdPatientAppointmentList" Grid.Row="2" Width="720" Height="300" Background="Transparent"
+                                      Foreground="#262626" AutoGenerateColumns="False" AlternationCount="2" IsReadOnly="True">
+                                <DataGrid.RowStyle>
+                                    <Style TargetType="{x:Type DataGridRow}">
+                                        <Style.Triggers>
+                                            <Trigger Property="AlternationIndex" Value="0">
+                                                <Setter Property="Background" Value="#c9e9f6" />
+                                            </Trigger>
+                                            <Trigger Property="AlternationIndex" Value="1">
+                                                <Setter Property="Background" Value="#f3fafd" />
+                                            </Trigger>
+                                            <!--   <DataTrigger Binding="{Binding Path=Selectable}" Value="False">
+                                                <DataTrigger.Setters>
+                                                    <Setter Property="Background" Value="#ffffff" />
+                                                </DataTrigger.Setters>
+                                            </DataTrigger> -->
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGrid.RowStyle>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="dgcApptPatientId" Header="Patient ID"  Binding="{Binding patientId}" Width="90" />
+                                    <DataGridTextColumn x:Name="dgcApptPatientFName" Header="Patient First Name" Binding="{Binding firstName}"  Width="auto" >
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="dgcApptPatientLName" Header="Patient Last Name" Binding="{Binding lastName}"  Width="auto" >
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="dgcApptPatientMedicareNo" Header="Patient Medicare No"  Binding="{Binding medicareNo}" Width="110" />
+                                    <DataGridTextColumn x:Name="dgcApptPatientContactNo" Header="Patient Contact No"  Binding="{Binding contactNo}" Width="auto" />
+                                    <DataGridTextColumn x:Name="dgcApptPatientEmail" Header="Patient Email No"  Binding="{Binding emailAddress}" Width="auto" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                        </Grid>
+                    </Grid>
+
+                </TabItem>
+
+
+                <TabItem x:Name="PatientTab" Header="Patient" Foreground="DarkSlateGray" FontWeight="Bold" FontSize="13" Height="22" VerticalAlignment="Top" Selector.Selected="Patient_Selected">
+                    <Grid x:Name="grdPatient" Background="Transparent" HorizontalAlignment="Center" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <TextBlock x:Name="tbPatientMainMessage"  HorizontalAlignment="Left" Width="auto" Height="25" FontSize="12" Grid.ColumnSpan="10" Grid.Row="0"  Margin="0,30,0,-38"/>
+
+                        </Grid>
+                        <Grid Grid.Row="1" Height="auto" HorizontalAlignment="Right">
+                            <Image x:Name="imgAddPatient" Source="/Images/patientAdd.png" ToolTip="Add Patient" Width="60" Height="50" MouseDown="btnAddPatient_Click" HorizontalAlignment="Right" Opacity="0.5" MouseEnter="addPatientIcon_onMouseEnter" MouseLeave="addPatientIcon_onMouseLeave" Margin="0,0,100,-10"/>
+                            <Image x:Name="imgDeletePatient" Source="/Images/patientDelete.png" ToolTip="Delete Patient" Width="60" Height="50" MouseDown="btnDeletePatient_Click" HorizontalAlignment="Right" Opacity="0.5" MouseEnter="deletePatientIcon_onMouseEnter" MouseLeave="deletePatientIcon_onMouseLeave" Margin="0,0,0,-10"/>
+                        </Grid>
+                        <Grid Grid.Row="2" HorizontalAlignment="Center" Margin="0,10,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="lblPatientList" Background="Transparent" Foreground="#4d4d4d" HorizontalContentAlignment="Left"/>
+                            <DataGrid x:Name="grdPatientList" Grid.Row="1" Width="720" Height="350" Background="Transparent"
+                                      Foreground="#262626" AutoGenerateColumns="False" MouseDoubleClick="gridPatientList_MouseDoubleClick" IsReadOnly="True" AlternationCount="2">
+                                <DataGrid.RowStyle>
+                                    <Style TargetType="{x:Type DataGridRow}">
+                                        <Style.Triggers>
+                                            <Trigger Property="AlternationIndex" Value="0">
+                                                <Setter Property="Background" Value="#c9e9f6" />
+                                            </Trigger>
+                                            <Trigger Property="AlternationIndex" Value="1">
+                                                <Setter Property="Background" Value="#f3fafd" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGrid.RowStyle>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="dgcpatientId" Header="Patient ID"  Binding="{Binding patientId}" Width="70" />
+                                    <DataGridTextColumn x:Name="dgcpatientFName" Header="Firstname"  Binding="{Binding firstName}" Width="auto"  />
+                                    <DataGridTextColumn x:Name="dgcpatientLName" Header="Lastname"  Binding="{Binding lastName}" Width="auto" />
+                                    <DataGridTextColumn x:Name="dgcpatientMedicareNo" Header="Medicare No"  Binding="{Binding medicareNo}" Width="auto" />
+                                    <DataGridTextColumn x:Name="dgcpatientDOB" Header="Date of Birth"  Binding="{Binding dob, ConverterCulture='en-AU', StringFormat=d}" Width="auto" />
+                                    <DataGridTextColumn x:Name="dgcpatientAge" Header="Age"  Binding="{Binding age}" Width="40" />
+
+                                    <DataGridTextColumn x:Name="dgcpatientGender" Header="Gender"  Binding="{Binding gender}" Width="120" />
+                                    <DataGridTextColumn x:Name="dgcpatientContactNo" Header="Contact No"  Binding="{Binding contactNo}" Width="100" />
+                                
+                                    <DataGridTextColumn x:Name="dgcpatientSuburb" Header="Suburb"  Binding="{Binding suburb}" Width="auto" />
+                                    <DataGridTextColumn x:Name="dgcpatientState" Header="State"  Binding="{Binding state}" Width="auto" />
+                                    <DataGridTextColumn x:Name="dgcpatientCountry" Header="Country"  Binding="{Binding country}" Width="auto" />
+                                  
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                        <Grid Grid.Row="3" Height="auto" HorizontalAlignment="Right">
+                            <Image x:Name="imgAddPatientMedicalRecords" Source="/Images/medicalRecordAdd.png" ToolTip="Add Patient's Medical Records Here" Width="70" Height="50" MouseDown="btnAddMedicalRecords_Click" HorizontalAlignment="Right" Opacity="0.4" MouseEnter="addMedicalRecordsIcon_onMouseEnter" MouseLeave="addMedicalRecordsIcon_onMouseLeave" Margin="0,10,0,10"/>
+                        </Grid>
+                        <Grid Grid.Row="4" Height="auto" HorizontalAlignment="Right">
+                            <Image x:Name="imgYourMedicalRecordsLogo" Source="/Images/yourMedicalRecords.png" ToolTip="View Patient's Medical Records by Clicking the View Folder" Width="160" Height="50" HorizontalAlignment="Left" Opacity="0.7" Margin="0,0,70,10" Stretch="UniformToFill"/>
+                            <Image x:Name="imgViewMedicalRecords" Source="/Images/medicalRecordView.png" ToolTip="View Your Medical Records Here" Width="70" Height="50" MouseDown="btnViewMedicalRecords_Click" HorizontalAlignment="Right" Opacity="0.4" MouseEnter="viewMedicalRecordsIcon_onMouseEnter" MouseLeave="viewMedicalRecordsIcon_onMouseLeave" Margin="0,0,0,10"/>
+
+                        </Grid>
+                    </Grid>
+                </TabItem>
+
+                <TabItem x:Name="Employee" Header="Employee" Foreground="DarkSlateGray" FontWeight="Bold" FontSize="13" Selector.Selected ="Employee_Selected">
+                    <Grid x:Name="grdEmployee" Background="Transparent" HorizontalAlignment="Center" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <TextBlock x:Name="tbEmployeeMainMessage"  HorizontalAlignment="Left" Width="auto" Height="auto" FontSize="12" Grid.ColumnSpan="10" Grid.Row="0"  Margin="0,30,0,-38"/>
+
+                        </Grid>
+
+                        <Grid Grid.Row="1" Height="auto" HorizontalAlignment="Right">
+                            <Image x:Name="imgAddEmployee" Source="/Images/employeeAdd.png" ToolTip="Add Employee" Width="60" Height="50" MouseDown="btnAddEmployee_Click" HorizontalAlignment="Right" Opacity="0.5" MouseEnter="addEmployeeIcon_onMouseEnter" MouseLeave="addEmployeeIcon_onMouseLeave" Margin="0,0,100,-30"/>
+                            <Image x:Name="imgDeleteEmployee" Source="/Images/employeeDelete.png" ToolTip="Delete Employee" Width="60" Height="50" MouseDown="btnDeleteEmployee_Click" HorizontalAlignment="Right" Opacity="0.5" MouseEnter="deleteEmployeeIcon_onMouseEnter" MouseLeave="deleteEmployeeIcon_onMouseLeave" Margin="0,0,0,-30"/>
+                        </Grid>
+                        <Grid Grid.Row="2" HorizontalAlignment="Center" Margin="0,30,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="lblEmployeeList" Background="Transparent" Foreground="#4d4d4d" HorizontalContentAlignment="Left"/>
+                            <DataGrid x:Name="grdEmployeeList" ItemsSource="{Binding employee}" Grid.Row="1" Width="720" Height="350" Background="Transparent"
+                                      Foreground="#262626" AutoGenerateColumns="False" MouseDoubleClick="gridEmployeeList_MouseDoubleClick" IsReadOnly="True" AlternationCount="2">
+                                <DataGrid.RowStyle>
+                                    <Style TargetType="{x:Type DataGridRow}">
+                                        <Style.Triggers>
+                                            <Trigger Property="AlternationIndex" Value="0">
+                                                <Setter Property="Background" Value="#c9e9f6" />
+                                            </Trigger>
+                                            <Trigger Property="AlternationIndex" Value="1">
+                                                <Setter Property="Background" Value="#f3fafd" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGrid.RowStyle>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="dgcemployeeId" Header="Employee ID"  Binding="{Binding employeeId}" Width="90" />
+                                    <DataGridTextColumn x:Name="dgcemployeeFName" Header="Firstname"  Binding="{Binding firstName}" Width="auto"  />
+                                    <DataGridTextColumn x:Name="dgcemployeeLName" Header="Lastname"  Binding="{Binding lastName}" Width="auto" />
+                                    <DataGridTextColumn x:Name="dgcemployeeGender" Header="Gender"  Binding="{Binding gender}" Width="110" />
+                                    <DataGridTextColumn x:Name="dgcemployeeJobTitle" Header="Job Title"  Binding="{Binding jobTitle}" Width="auto" />
+                                    <DataGridTextColumn x:Name="dgcemployeeDepartment" Header="Department"  Binding="{Binding department}" Width="auto" />
+                                    <DataGridTextColumn x:Name="dgcemployeeDateHired" Header="Date Hired"  Binding="{Binding dob, ConverterCulture='en-AU', StringFormat=d}" Width="auto" />
+                                    <DataGridTextColumn x:Name="dgcemployeeStatus" Header="Status"  Binding="{Binding employeeStatus}" Width="auto" />
+                                    <DataGridTextColumn x:Name="dgcemployeeWorkingHours" Header="Working Hours"  Binding="{Binding hoursWorked}" Width="auto" />
+                                    <DataGridTextColumn x:Name="dgcemployeeStartTime" Header="Start Working Time"  Binding="{Binding startTime, ConverterCulture='en-AU', StringFormat=t}" Width="auto" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+
+             
+            </TabControl>
+
+        </Grid>
+
+
+
+
+
+    </Grid>
+</Window>

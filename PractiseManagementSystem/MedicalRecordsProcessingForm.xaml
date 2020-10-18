@@ -1,0 +1,338 @@
+﻿<Window x:Class="PractiseManagementSystem.MedicalRecordsProcessingForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PractiseManagementSystem"
+        mc:Ignorable="d"  WindowStyle="None"  WindowStartupLocation="CenterScreen"
+        Title="MedicalRecordsProcessingForm" Height="763.91" Width="1076.365">
+    <Grid x:Name="MedicalRecordsPage">
+        <Grid.Background>
+            <ImageBrush x:Name="bgMedRecordsPage" ImageSource="/Images/bgMedicalRecords.jpg" Opacity="0.1" Stretch="UniformToFill">
+            </ImageBrush>
+        </Grid.Background>
+        <Grid.Resources>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="Foreground" Value="#4d4d4d" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="FontSize" Value="11"/>
+                <Setter Property="HorizontalContentAlignment" Value="Right" />
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="Width" Value="auto"/>
+            </Style>
+            <Style x:Key="textBoxStyle" TargetType="TextBox">
+                <Setter Property="Foreground" Value="DarkSlateGray" />
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+            </Style>
+            <Style x:Key="textBlockStyle" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="DarkSlateGray" />
+                <Setter Property="Padding" Value="0,4,0,0" />
+                <Setter Property="Height" Value="auto"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+            </Style>
+            <Style x:Key="comboBoxStyle" TargetType="ComboBox">
+                <Setter Property="Foreground" Value="#4d4d4d" />
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="Background" Value="Transparent"/>
+            </Style>
+            <Style x:Key="comboBoxItemStyle" TargetType="ComboBoxItem">
+                <Setter Property="Foreground" Value="#4d4d4d" />
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="Background" Value="Transparent"/>
+            </Style>
+            <Style x:Key="datePickerStyle" TargetType="DatePicker">
+                <Setter Property="Foreground" Value="#4d4d4d" />
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+            </Style>
+        </Grid.Resources>
+        <DockPanel x:Name="dockpnlMenu">
+            <Grid Width="auto" Height="100" DockPanel.Dock="Top" VerticalAlignment="Top">
+                <Image Source="/Images/mainLogo.png" Opacity="0.8" VerticalAlignment="Center" HorizontalAlignment="Left" Height="80" Margin="0,0,0,0" Width="80"></Image>
+                <Label x:Name="lblMedRecordsHeaderName" Content="Patient Medical Records" VerticalContentAlignment="Center" FontFamily="Trebuchet MS" Foreground="#0f5462" FontSize="28" FontWeight="Bold" Margin="95,0,0,0"></Label>
+                <Image x:Name="exitApplication" Source="/Images/exitApplication.png" ToolTip="Exit Application" VerticalAlignment="Top" HorizontalAlignment="Right" Width="40" Margin="0,10,10,0" MouseDown="exitApplication_onMouseDown"></Image>
+                <Grid.Background>
+                    <ImageBrush ImageSource="/Images/mainheader.jpg" Stretch="UniformToFill" Opacity="0.8"/>
+                </Grid.Background>
+            </Grid>
+            <Grid  DockPanel.Dock="Left" Width="50" HorizontalAlignment="Left">
+                <Grid.Background>
+                    <ImageBrush  x:Name="image4" ImageSource="/Images/mainsideleft.jpg"  Stretch="UniformToFill" Opacity="0.2"/>
+                </Grid.Background>
+
+            </Grid>
+            <Grid  DockPanel.Dock="Right" Width="50">
+                <Grid.Background>
+                    <ImageBrush  x:Name="image3" ImageSource="/Images/mainsideright.jpg"  Stretch="UniformToFill" Opacity="0.2"/>
+                </Grid.Background>
+
+            </Grid>
+            <Grid DockPanel.Dock="Bottom" Height="30" VerticalAlignment="Bottom">
+                <Grid.Background>
+                    <ImageBrush  x:Name="image2" ImageSource="/Images/mainfooter.jpg"  Stretch="UniformToFill" Opacity="0.2"/>
+                </Grid.Background>
+            </Grid>
+        </DockPanel>
+        <Grid Margin="0,100,0,10" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Label x:Name="lblMedRecordsMessage"  HorizontalAlignment="Left" Width="auto" Height="auto" FontSize="12" Grid.ColumnSpan="10" Grid.Row="0" Margin="0,5,0,0"/>
+            </Grid>
+         <!--   <Grid Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,8,0">
+                <Image x:Name="imgAddLabRecords" Source="/Images/apptAdd.png" ToolTip="Add Medical Records" Width="60" Height="60" MouseDown="btnAddMedicalRecords_MouseDown" HorizontalAlignment="Right" Opacity="0.7" MouseEnter="addMedicalIcon_onMouseEnter" MouseLeave="addMedicalIcon_onMouseLeave"/>
+            </Grid>
+-->
+            <Grid Grid.Row="2" HorizontalAlignment="Left" Margin="0,0,8,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="lblMedicalRecordsId" Content="Medical Reference Id " Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtMedicalRecordsId"  Width="100" Grid.Column="1" Style="{StaticResource textBoxStyle}" IsReadOnly="True" Background="Transparent"/>
+
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Label x:Name="lblMRPatientName" Content="Patient Name " Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtMRPatientName"  Width="200" Grid.Column="1" Style="{StaticResource textBoxStyle}" IsReadOnly="True" Background="Transparent"/>
+                <Label x:Name="lblMRPatientId" Content="Patient Id "  Grid.Column="2" Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtMRPatientId"  Width="80" Grid.Column="3" Style="{StaticResource textBoxStyle}" IsReadOnly="True" Background="Transparent"/>
+                <Label x:Name="lblMRPatientAge" Content="Age "  Grid.Column="4" Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtMRPatientAge"  Width="80" Grid.Column="5" Style="{StaticResource textBoxStyle}" IsReadOnly="True" Background="Transparent"/>
+                <Label x:Name="lblMRPatientMedicare" Content="Medicare No " Grid.Row="1"  Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtMRPatientMedicare"  Width="180" Grid.Row="1" Grid.Column="1" Style="{StaticResource textBoxStyle}" IsReadOnly="True" Background="Transparent"/>
+                <Label x:Name="lblMRPatientGender" Content="Gender " Grid.Column="6" Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtMRPatientGender"  Width="80" Grid.Column="7" Style="{StaticResource textBoxStyle}" IsReadOnly="True" Background="Transparent"/>
+                <Label x:Name="lblMRPatientContact" Content="Contact No " Grid.Row="1" Grid.Column="2" Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtMRPatientContact"  Width="80" Grid.Row="1" Grid.Column="3" Style="{StaticResource textBoxStyle}" IsReadOnly="True" Background="Transparent"/>
+                <Label x:Name="lblMRPatientDOB" Content="Date of Birth" Grid.Row="1" Grid.Column="4" Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtMRPatientDOB"  Width="80" Grid.Row="1" Grid.Column="5" Style="{StaticResource textBoxStyle}" IsReadOnly="True" Background="Transparent"/>
+
+
+                <Label x:Name="tbERContact" Content="Patient Emergency Contact"  Grid.Row="2" Grid.ColumnSpan="4" Foreground="DarkSlateBlue" Style="{StaticResource labelStyle}" HorizontalAlignment="Left" />
+                <Label x:Name="lblMRPatientERName" Content="Name " Grid.Row="3"  Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtMRPatientERName"  Width="180" Grid.Row="3" Grid.Column="1" Style="{StaticResource textBoxStyle}"  IsReadOnly="True" Background="Transparent"/>
+                <Label x:Name="lblMRPatientERContact" Content="Contact " Grid.Row="3" Grid.Column="2" Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtMRPatientERContact"  Width="180" Grid.Row="3" Grid.Column="3" Style="{StaticResource textBoxStyle}"  IsReadOnly="True" Background="Transparent"/>
+                <Label x:Name="lblMRERRelationship" Content="Relationship " Grid.Row="3" Grid.Column="4" Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtMRERRelationship"  Width="180" Grid.Row="3" Grid.Column="5" Style="{StaticResource textBoxStyle}" IsReadOnly="True" Background="Transparent"/>
+
+                <Label x:Name="tbDoctorInfo" Content="--------Doctor Information--------" Foreground="DarkSlateBlue" FontSize="14" FontWeight="Bold" Style="{StaticResource labelStyle}" Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+
+                <Label x:Name="lblMRDoctorName" Content="Doctor Name" Grid.Row="5" Style="{StaticResource labelStyle}"/>
+                <ComboBox x:Name="cbxMRDoctorList"  Width="150" Grid.Row="5" Grid.Column="1" Style="{StaticResource comboBoxStyle}" SelectionChanged="AssignedDoctor_SelectionChanged"/>
+                <Label x:Name="lblMRDoctorId" Content="Doctor Id " Grid.Row="5" Grid.Column="2" Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtMRDoctorId"  Width="80" Grid.Row="5" Grid.Column="3" Style="{StaticResource textBoxStyle}" IsReadOnly="True" Background="Transparent"/>
+                <Label x:Name="lblMRConsultDate" Content="Consultation Date" Grid.Row="5" Grid.Column="4" Style="{StaticResource labelStyle}" Margin="0,0,8,0" />
+                <Label x:Name="lblMandatory10" Content="*"  Grid.Row="5" Grid.Column="4" Style="{StaticResource labelStyle}" Foreground="Red"/>
+                <DatePicker x:Name="txtMRConsultDate" Width="120" Grid.Row="5" Grid.Column="5" SelectedDateChanged="ConsultationDatePicker_SelectedDateChanged" Style="{StaticResource datePickerStyle}"/>
+                <Label x:Name="tbPersonalMedBackground" Content="--------Personal Medical Background--------" Grid.Row="7" Foreground="DarkSlateBlue" FontSize="14" FontWeight="Bold" Style="{StaticResource labelStyle}" Grid.ColumnSpan="4" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Label x:Name="lblChiefComplaint" Content="Chief Complaint "  Grid.Row="2" Style="{StaticResource labelStyle}" Margin="0,0,5,0"/>
+                <Label x:Name="lblMandatory5" Content="*" Grid.Row="2" Style="{StaticResource labelStyle}" Foreground="Red" />
+                <TextBox x:Name="txtChiefComplaint" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Width="220" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Style="{StaticResource textBoxStyle}" />
+                <Label x:Name="lblPresentMedHistory"  Content="History of Present Illness " Grid.Row="2" Grid.Column="3" Style="{StaticResource labelStyle}" Margin="0,0,5,0"/>
+                <Label x:Name="lblMandatory7" Content="*" Grid.Row="2" Grid.Column="3" Style="{StaticResource labelStyle}" Foreground="Red" />
+                <TextBox x:Name="txtPresentMedHistory" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" Width="220" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Style="{StaticResource textBoxStyle}"/>
+                <Label x:Name="lblMedTaken" Content="Medications Taken " Grid.Row="2"  Grid.Column="6" Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtMedTaken" Grid.Row="2" Grid.Column="7" Width="150" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Style="{StaticResource textBoxStyle}"/>
+                <Label x:Name="lblDiagnosis" Content="Diagnosis " Grid.Row="3" Style="{StaticResource labelStyle}" Margin="0,0,5,0"/>
+                <Label x:Name="lblMandatory6" Content="*" Grid.Row="3" Style="{StaticResource labelStyle}" Foreground="Red" />
+                <TextBox x:Name="txtDiagnosis" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Width="220" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Style="{StaticResource textBoxStyle}"/>
+                <Label x:Name="lblTreatment" Content="Current Regimen " Grid.Row="3" Grid.Column="3" Style="{StaticResource labelStyle}" Margin="0,0,5,0"/>
+                <Label x:Name="lblMandatory8" Content="*" Grid.Row="3" Grid.Column="3" Style="{StaticResource labelStyle}" Foreground="Red" />
+                <TextBox x:Name="txtTreatment" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Width="220" Grid.Row="3" Grid.Column="4" Style="{StaticResource textBoxStyle}"/>
+                <Label x:Name="lblPrescription" Content="Presciption " Grid.Row="3" Grid.Column="6"  Style="{StaticResource labelStyle}" Margin="0,0,5,0"/>
+                <Label x:Name="lblMandatory9" Content="*" Grid.Row="3" Grid.Column="6" Style="{StaticResource labelStyle}" Foreground="Red" />
+                <TextBox x:Name="txtPresciption" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Width="150" Grid.Row="3" Grid.Column="7" Style="{StaticResource textBoxStyle}"/>
+
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <WrapPanel Grid.ColumnSpan="3" Margin="20,0,0,0">
+                    <Label x:Name="lblBP" Content="Blood Pressure  (B/P) " Style="{StaticResource labelStyle}" />
+                    <Label x:Name="lblMandatory1" Content="*" Grid.Row="5" Grid.Column="2" Style="{StaticResource labelStyle}" Foreground="Red" Margin="-10,0,0,0"/>
+                    <TextBox x:Name="txtBP"  Width="60"  Grid.Column="1" Style="{StaticResource textBoxStyle}"/>
+                    <Label x:Name="lblWeight" Content="| Weight "  Style="{StaticResource labelStyle}" Margin="20,0,0,0"/>
+                    <Label x:Name="lblMandatory2" Content="*" Grid.Row="5" Grid.Column="2" Style="{StaticResource labelStyle}" Foreground="Red" Margin="-10,0,0,0"/>
+                    <TextBox x:Name="txtWeight" Width="50" Style="{StaticResource textBoxStyle}"/>
+                    <Label x:Name="lblWeightKG" Content="kg "  Style="{StaticResource labelStyle}"/>
+                    <Label x:Name="lblHeight" Content="| Height "  Style="{StaticResource labelStyle}" Margin="20,0,0,0"/>
+                    <Label x:Name="lblMandatory3" Content="*" Grid.Row="5" Grid.Column="2" Style="{StaticResource labelStyle}" Foreground="Red" Margin="-10,0,0,0"/>
+                    <TextBox x:Name="txtHeight" Width="50" Style="{StaticResource textBoxStyle}"/>
+                    <Label x:Name="lblHeightCM" Content="cm "  Style="{StaticResource labelStyle}"/>
+                </WrapPanel>
+
+                <WrapPanel Grid.Row="1" Margin="20,0,0,0">
+                    <Label x:Name="lblBloodType" Content="Blood Type " Style="{StaticResource labelStyle}"/>
+                    <TextBox x:Name="txtBloodType"  Width="50" Grid.Column="1" Style="{StaticResource textBoxStyle}"/>
+                </WrapPanel>
+                <Label x:Name="lblFamilyHistory" Content="Family History " Grid.Row="1" Grid.Column="1" Style="{StaticResource labelStyle}" Margin="0,0,5,0"/>
+                <Label x:Name="lblMandatory4" Content="*" Grid.Row="1" Grid.Column="1" Style="{StaticResource labelStyle}" Foreground="Red" />
+                <TextBox x:Name="txtFamilyHistory" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Width="200" Grid.Row="1" Grid.Column="2" Style="{StaticResource textBoxStyle}" Height="40"/>
+                <Label x:Name="lblPastMedHistory" Content="Past Health History " Grid.Row="1" Grid.Column="3" Style="{StaticResource labelStyle}"/>
+                <TextBox x:Name="txtPastMedHistory" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Width="200" Grid.Row="1" Grid.Column="4" Style="{StaticResource textBoxStyle}" Height="40"/>
+                <WrapPanel Grid.Column="3" Grid.ColumnSpan="2">
+                    <Label x:Name="lblIsSmoking" Content="| Is Smoking? " Style="{StaticResource labelStyle}" Margin="0,0,0,0"/>
+                    <CheckBox x:Name="chkIsSmoking" Grid.Column="3" Width="20" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,6,190,5"/>
+                </WrapPanel>
+                <WrapPanel Grid.Column="3" Grid.ColumnSpan="4" Margin="120,0,0,0">
+                    <Label x:Name="lblPregnant" Content="| Are you pregnant? " Grid.Row="2" Grid.Column="2" Style="{StaticResource labelStyle}" VerticalAlignment="Center"/>
+                    <RadioButton x:Name="rbPregnantYES" Content="Yes" GroupName="rbPregnantGroup" Margin="0,5,0,0" />
+                    <RadioButton x:Name="rbPregnantNO" Content="No"  GroupName="rbPregnantGroup" Margin="5,5,0,0"/>
+                    <RadioButton x:Name="rbPregnantNA" Content="N/A" GroupName="rbPregnantGroup" Margin="5,5,0,0"/>
+                </WrapPanel>
+                <Label x:Name="tbPastHistory" Content="Do you now or have you ever had:"  Grid.Row="3" Grid.ColumnSpan="4" Foreground="DarkSlateBlue" Style="{StaticResource labelStyle}" HorizontalAlignment="Left"/>
+                <WrapPanel Grid.Row="4" Width="140" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <CheckBox x:Name="chkHasDiabetes" Width="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblHasDiabetes" Content="Diabetes " Grid.Row="4" Style="{StaticResource labelStyle}" />
+                </WrapPanel>
+                <WrapPanel Grid.Row="5" Width="140" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <CheckBox x:Name="chkHasHighBlood" Width="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblHasHighBlood" Content="High Blood Pressure " Grid.Row="5" Style="{StaticResource labelStyle}" />
+                </WrapPanel>
+
+                <WrapPanel Grid.Row="6" Width="140" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <CheckBox x:Name="chkHasHighChol" Width="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblHasHighChol" Content="High Cholesterol " Grid.Row="6" Style="{StaticResource labelStyle}"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="4" Grid.Column="1" Width="140" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <CheckBox x:Name="chkHasHeartProb" Width="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblHasHeartProb" Content="Heart Problem " Style="{StaticResource labelStyle}"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="5" Grid.Column="1" Width="140" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <CheckBox x:Name="chkHasAsthma" Width="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblHasAsthma" Content="Asthma " Style="{StaticResource labelStyle}"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="5"  Grid.Column="3" Width="140" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <CheckBox x:Name="chkHasEpilepsy" Width="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblHasEpilepsy" Content="Epilepsy" Style="{StaticResource labelStyle}"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="4" Grid.Column="2" Width="140" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <CheckBox x:Name="chkHasPneumonia" Width="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblHasPneumonia" Content="Pneumonia" Style="{StaticResource labelStyle}"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="5" Grid.Column="2" Width="140" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <CheckBox x:Name="chkHasHepatitis" Width="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblHasHepatitis" Content="Hepatitis " Style="{StaticResource labelStyle}"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="6" Grid.Column="1" Width="150" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <CheckBox x:Name="chkHasUlcer" Width="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblHasUlcer" Content="Stomach/Peptic Ulcer" Style="{StaticResource labelStyle}"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="6" Grid.Column="2" Width="140" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <CheckBox x:Name="chkHasLeukemia" Width="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblHasLeukemia" Content="Leukemia" Style="{StaticResource labelStyle}"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="4" Grid.Column="3" Width="140" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <CheckBox x:Name="chkHasTB" Width="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblHasTB" Content="Tubercolosis " Style="{StaticResource labelStyle}"/>
+                </WrapPanel>
+                <WrapPanel Grid.Row="6" Grid.Column="3" Width="140" HorizontalAlignment="Left" Margin="20,0,0,0">
+                    <CheckBox x:Name="chkHasHIV" Width="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <Label x:Name="lblHasHIV" Content="HIV/AIDS" Style="{StaticResource labelStyle}"/>
+                </WrapPanel>
+                <Label x:Name="tbMedicalInfo" Content="--------Medical Information--------" Foreground="DarkSlateBlue" FontSize="14" FontWeight="Bold" Style="{StaticResource labelStyle}" Grid.Row="8" Grid.ColumnSpan="4" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center">
+                <Image x:Name="imgResetMedicalRecords" Source="/Images/btnReset.png" Width="100" MouseDown="resetMedicalRecords_onMouseDown" Margin="-150,25,0,0"/>
+                <Image x:Name="imgAddMedicalRecords" Source="/Images/btnAdd.png" Width="100" MouseDown="addMedicalRecords_onMouseDown" Margin="150,25,0,0"/>
+                <Image x:Name="imgUpdateMedicalRecords" Source="/Images/btnUpdate.png" Width="100" MouseDown="updateMedicalRecords_onMouseDown"  Margin="150,25,0,0"/>
+                <Image x:Name="imgHomeMedRecordsBtn" Source="/Images/imgHomeBtn.png" ToolTip="Go to Main Page" Width="40" MouseDown="homeMedRecords_onMouseDown" Opacity="0.5" MouseEnter="homeMedRecordsIcon_onMouseEnter" MouseLeave="homeMedRecordsIcon_onMouseLeave" Margin="-370,25,0,0" HorizontalAlignment="Left"/>
+                <Image x:Name="imgBackMedRecordsBtn" Source="/Images/imgBackBtn.jpg" ToolTip="Return to Previous Page" Width="40" MouseDown="backMedRecords_onMouseDown" Opacity="0.6" MouseEnter="backMedRecordsIcon_onMouseEnter" MouseLeave="backMedRecordsIcon_onMouseLeave" Margin="-370,25,0,0" HorizontalAlignment="Left"/>
+
+
+                <!--  <Image x:Name="imgAddDoctorInfo" Source="/Images/addDoctorInfo.png" Width="140" MouseDown="addDoctor_onMouseDown" Margin="150,20,0,0"/>
+          -->
+            </Grid>
+            <Grid Grid.Row="7" Grid.Column="0" HorizontalAlignment="Left">
+                </Grid>
+
+        </Grid>
+    </Grid>
+</Window>

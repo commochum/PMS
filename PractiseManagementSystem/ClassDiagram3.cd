@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PractiseManagementSystem.App" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PractiseManagementSystem.AppointmentProcessingForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AABJCEAAAAIAAAAgAAAAAIAAAAAIAABAAACAAAEAAAA=</HashCode>
+      <FileName>AppointmentProcessingForm.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PractiseManagementSystem.ConnectionFactory" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAEIAAAABAAAAAAABAAEEQEgAAAAAAAACAAAAAYAAAA=</HashCode>
+      <FileName>ConnectionFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PractiseManagementSystem.Appointment" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAIAAAAAAAAAAAAAAAAAAAABAgIAAAIKwAAACMAAAA=</HashCode>
+      <FileName>Domain_Classes\Appointment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PractiseManagementSystem.Doctor" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAIAAIAAAABAEAgIAAAICAAAAACCAAAAkgAAAQAAGA=</HashCode>
+      <FileName>Domain_Classes\Doctor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PractiseManagementSystem.Employee" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAARAgAAAAACAAwAIgiMAAwMiACAABAAgIAYUAqAGE=</HashCode>
+      <FileName>Domain_Classes\Employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PractiseManagementSystem.Login" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAABAQAAAQEAAAAAAAASAAAAAgAAAAA=</HashCode>
+      <FileName>Domain_Classes\Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PractiseManagementSystem.Patient" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAAAAQIACACARAIAIgQAIQAAQAJBAAAoAQKCACA=</HashCode>
+      <FileName>Domain_Classes\Patient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PractiseManagementSystem.Person" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>VBAAAMAACABgQQiAJEBIgAAAAYYAgAGGBABBjEUQAIg=</HashCode>
+      <FileName>Domain_Classes\Person.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PractiseManagementSystem.EmployeeProcessingForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QABAwAUAAAABAAJAAQEJAggABAAIACIAAAAIAIAAwCA=</HashCode>
+      <FileName>EmployeeProcessingForm.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PractiseManagementSystem.LoginPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAABAAAAAAAAAAIAAAAEAAAgIAABAAAgAAAAAEAA=</HashCode>
+      <FileName>LoginPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PractiseManagementSystem.MainContentPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAiKCAEREYIQAAIBAQAYAQAEBABAEChAAUEABQAgAAI=</HashCode>
+      <FileName>MainContentPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PractiseManagementSystem.PatientProcessingForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBIAAAAACAQAAEAIAAgAAAAABAJAABAAAAAAACAAAA=</HashCode>
+      <FileName>PatientProcessingForm.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PractiseManagementSystem.ContactFormPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>UNUSED WPF Forms\ContactFormPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PractiseManagementSystem.DoctorProcessingForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGACCAAABEAABAAAJAACAAAAAAAAABAAAAA=</HashCode>
+      <FileName>UNUSED WPF Forms\DoctorProcessingForm.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PractiseManagementSystem.Properties.Resources" Collapsed="true">
+    <Position X="12.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PractiseManagementSystem.Properties.Settings" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="PractiseManagementSystem.IAddress" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAgAAAAAAAAAAAIAAAAAAAAAhAQQAAA=</HashCode>
+      <FileName>Interfaces\IAddress.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PractiseManagementSystem.IContact" Collapsed="true">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAEAAAAAggAAAAA=</HashCode>
+      <FileName>Interfaces\IContact.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PractiseManagementSystem.IDiagnosis" Collapsed="true">
+    <Position X="8.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAABAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDiagnosis.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PractiseManagementSystem.ITreatment" Collapsed="true">
+    <Position X="10.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAEgAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ITreatment.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
